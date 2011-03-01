@@ -1,0 +1,65 @@
+= utc-dates
+
+A simple date formatting/parsing library that (by default)
+normalizes all formatted dates to UTC, and assumes all date
+strings are indicated in UTC.
+
+The default date format (held by `*date-format*`) is:
+
+yyyy-MM-dd'T'HH:mm:ss.SSSZ
+
+which can be dynamically rebound as desired.
+
+All dates emitted by `parse` will have their time zone shifted
+to the local environment's.
+
+If it wasn't obvious, this is not meant to be a general-purpose
+date/time library.  Its intended use is to offer a simple API
+useful for representing/consuming dates within
+lexicographically-sensitive database systems (e.g. couchdb,
+AWS SimpleDB, etc).
+
+== "Installation"
+
+utc-dates is available in Maven central.  Add it to your Maven project's `pom.xml`:
+
+----
+<dependency>
+  <groupId>com.cemerick</groupId>
+  <artifactId>utc-dates</artifactId>
+  <version>0.0.1</version>
+</dependency>
+----
+
+or your leiningen project.clj:
+
+----
+[com.cemerick/utc-dates "0.0.1"]
+----
+
+== Usage
+
+----
+=> (require '[cemerick.utc-dates :as dates])
+nil
+=> (dates/format (java.util.Date.))
+"2011-03-01T12:26:36.516+0000"
+=> (dates/parse *1)
+#<Date Tue Mar 01 07:26:36 EST 2011>
+=> (dates/format (java.util.Date.) "HH:mm:ss")
+"12:27:00"
+=> (binding [dates/*time-zone* (java.util.TimeZone/getTimeZone "CST")]
+     (dates/format (java.util.Date.)))
+"2011-03-01T06:27:51.007-0600"
+----
+
+== Need Help?
+
+Ping `cemerick` on freenode irc or twitter if you have questions
+or would like to contribute patches.
+
+== License
+
+Copyright © 2011 Chas Emerick
+
+Licensed under the EPL. (See the file epl-v10.html.)

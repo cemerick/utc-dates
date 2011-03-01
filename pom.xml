@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cemerick</groupId>
+    <artifactId>utc-dates</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>utc-dates</name>
+    <description>
+        A simple date formatting/parsing library that (by default)
+        normalizes all formatted dates to UTC, and assumes all date
+        strings are indicated in UTC.
+          
+        Its intended use is to offer a simple API
+        useful for representing/consuming dates within
+        lexicographically-sensitive database systems (e.g. couchdb,
+        AWS SimpleDB, etc).
+    </description>
+    <url>http://github.com/cemerick/utc-dates</url>
+
+    <parent>
+        <groupId>org.clojure</groupId>
+        <artifactId>pom.contrib</artifactId>
+        <version>0.0.20</version>
+    </parent>
+
+    <developers>
+        <developer>
+            <name>Chas Emerick</name>
+            <url>http://cemerick.com</url>
+            <email>cemerick@snowtide.com</email>
+            <timezone>-5</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:cemerick/utc-dates.git</connection>
+        <developerConnection>scm:git:git@github.com:cemerick/utc-dates.git</developerConnection>
+        <url>git@github.com:cemerick/utc-dates.git</url>
+    </scm>
+
+    <properties>
+        <clojure.version>1.2.0</clojure.version>
+    </properties>
+</project>
