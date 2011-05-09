@@ -31,9 +31,9 @@
    java.text.SimpleDateFormat)
  (:refer-clojure :exclude (format)))
 
-(def *date-format* "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+(def #^{:dynamic true} *date-format* "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
 (def UTC-tz (TimeZone/getTimeZone "UTC"))
-(def *time-zone* UTC-tz)
+(def #^{:dynamic true} *time-zone* UTC-tz)
 (def local-tz (TimeZone/getDefault))
 
 (defn now
