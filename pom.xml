@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cemerick</groupId>
     <artifactId>utc-dates</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>utc-dates</name>
     <description>
         A simple date formatting/parsing library that (by default)
