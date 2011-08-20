@@ -27,14 +27,14 @@ utc-dates is available in Maven central.  Add it to your Maven project's `pom.xm
 <dependency>
   <groupId>com.cemerick</groupId>
   <artifactId>utc-dates</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ----
 
 or your leiningen project.clj:
 
 ----
-[com.cemerick/utc-dates "0.0.1"]
+[com.cemerick/utc-dates "0.0.2"]
 ----
 
 == Usage
